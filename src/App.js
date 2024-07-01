@@ -49,7 +49,9 @@ function App() {
       <div id="game-area">
         <div id="tap-count">Taps: {tapCount}</div>
         <div id="tap-area" onClick={handleMultiTap} onTouchStart={handleMultiTap}>
-        <img style={{width:'300px', height: '300px' ,borderRadius:'50%'}} src={images}></img>
+
+            <img style={{width:'300px', height: '300px' ,borderRadius:'50%'}} src={images}></img>
+
         </div>
       </div>
     </div>
@@ -57,5 +59,4 @@ function App() {
 }
 
 export default App;
-
 
