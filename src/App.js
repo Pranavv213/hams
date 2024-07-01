@@ -3,20 +3,25 @@ import './App.css';
 
 function App() {
   const [tapCount, setTapCount] = useState(0);
+  const [tapHandled, setTapHandled] = useState(false);
 
   const handleMultiTap = (event) => {
     const tapArea = document.getElementById('tap-area');
 
     if (event.type === 'click') {
-      createTapFeedback(event.clientX, event.clientY, tapArea);
+      if (!tapHandled) {
+        createTapFeedback(event.clientX, event.clientY, tapArea);
+        updateTapCount();
+      }
+      setTapHandled(false);
     } else {
       for (let i = 0; i < event.changedTouches.length; i++) {
         const touch = event.changedTouches[i];
         createTapFeedback(touch.clientX, touch.clientY, tapArea);
+        updateTapCount();
       }
+      setTapHandled(true);
     }
-
-    updateTapCount();
   };
 
   const createTapFeedback = (x, y, tapArea) => {
