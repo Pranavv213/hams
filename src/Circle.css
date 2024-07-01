@@ -35,7 +35,7 @@
   
   #tap-area:active {
     transform: translateY(4px);
-    box-shadow: 0 2px #3e8e41;
+   
   }
   
   .tap-feedback {
