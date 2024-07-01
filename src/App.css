@@ -1,8 +1,9 @@
 body{
 
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(29,17,193,1) 46%, rgba(0,41,249) 100%);
+  /* background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(29,17,193,1) 46%, rgba(0,41,249) 100%); */
 
+  
 }
 .App{
   display: flex;
