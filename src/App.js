@@ -20,18 +20,21 @@ function App() {
     <div className="App">
       <br></br>
       <br></br>
+      
       <div class="nav" style={{width:'100%'}}> 
       <label htmlFor="image-upload" className="image-upload-label">Upload</label>
       <input type="file" id="image-upload" accept="image/*" onChange={handleFileChange} />
 
       &nbsp;
+      <br></br>
+      <br></br>
       
       
       </div>
 
 
      
-      <Circle img={imageSrc}/>
+      <Circle style={{width:'2px'}}img={imageSrc}/>
    
     </div>
   );

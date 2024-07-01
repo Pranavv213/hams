@@ -44,13 +44,14 @@ const Circle = ({img}) => {
 
 
   return (
-    <div className="app">
+    <div className="app" >
          
-         <div ><img src={coin} style={{width:'45px'}}></img> <l style={{fontSize:'60px'}}>{tapCount}</l></div>
+         <div className='counter'><img src={coin} style={{width:'45px'}}></img> &nbsp; <l style={{fontSize:'45px',color:'gold'}}>{tapCount}</l></div>
          <br></br>
-      <div className="image-container" onClick={(e) => { handleTap(e); addTapEffect(); }} onTouchStart={(e) => { handleTap(e); addTapEffect(); }}>
+         <br></br> <br></br> <br></br> <br></br> 
+      <div className="image-container"  onClick={(e) => { handleTap(e); addTapEffect(); }} onTouchStart={(e) => { handleTap(e); addTapEffect(); }}>
       
-        <img src={img} alt="Center" id="center-image" className="center-image" />
+        <img src={img} style={{width:'20em'}} alt="Center" id="center-image" className="center-image" />
        
       </div>
     </div>
