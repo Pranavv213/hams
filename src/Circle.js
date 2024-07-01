@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import coin from './images/coin.png'
 import './Circle.css';
 
 const Circle = ({img}) => {
@@ -40,25 +41,17 @@ const Circle = ({img}) => {
     }, 100); // Duration of the tap effect
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        setImageSrc(event.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+
 
   return (
     <div className="app">
-      <div className="upload-container">
-      
-      </div>
+         
+         <div ><img src={coin} style={{width:'45px'}}></img> <l style={{fontSize:'60px'}}>{tapCount}</l></div>
+         <br></br>
       <div className="image-container" onClick={(e) => { handleTap(e); addTapEffect(); }} onTouchStart={(e) => { handleTap(e); addTapEffect(); }}>
+      
         <img src={img} alt="Center" id="center-image" className="center-image" />
-        <div className="counter">Taps: {tapCount}</div>
+       
       </div>
     </div>
   );
