@@ -41,6 +41,11 @@ const Circle = ({img}) => {
     }, 100); // Duration of the tap effect
   };
 
+  const triggerVibration = () => {
+    if (navigator.vibrate) {
+      navigator.vibrate(50); // Vibrate for 50 milliseconds
+    }
+  };
 
 
   return (
@@ -49,7 +54,10 @@ const Circle = ({img}) => {
          <div className='counter'><img src={coin} style={{width:'45px'}}></img> &nbsp; <l style={{fontSize:'45px',color:'gold'}}>{tapCount}</l></div>
          <br></br>
          <br></br> <br></br> <br></br> <br></br> 
-      <div className="image-container"  onClick={(e) => { handleTap(e); addTapEffect(); }} onTouchStart={(e) => { handleTap(e); addTapEffect(); }}>
+      <div className="image-container"  onClick={(e) => { handleTap(e); addTapEffect(); 
+
+        triggerVibration()
+      }} onTouchStart={(e) => { handleTap(e); addTapEffect(); }}>
       
         <img src={img} style={{width:'15em',height:'15em'}} alt="Center" id="center-image" className="center-image" />
        
