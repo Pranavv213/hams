@@ -53,9 +53,9 @@ function Circle({img}) {
       <div >
      
      <center>
-        <div id="tap-count">{tapCount}</div>
+        <div >{tapCount}</div>
         </center>
-        <div id="tap-area" onClick={handleMultiTap} onTouchStart={handleMultiTap}>
+        <div onClick={handleMultiTap} onTouchStart={handleMultiTap}>
     
         <img style={{height:'300px',width:'300px',borderRadius:'50%'}}src={img}></img>
           
