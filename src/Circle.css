@@ -28,7 +28,7 @@
     border-radius: 50%;
     cursor: pointer;
     user-select: none;
-    box-shadow: 0 5px #3e8e41;
+    
     position: relative;
     transition: all 0.1s;
   }
