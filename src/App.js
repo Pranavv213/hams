@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
-import images from './images.jpeg'
 
 function App() {
   const [tapCount, setTapCount] = useState(0);
 
   const handleMultiTap = (event) => {
+    // Prevent default behavior to avoid double event firing
+    event.preventDefault();
+
     const tapArea = event.currentTarget;
 
     // Check if the event was triggered by touch
@@ -49,9 +51,7 @@ function App() {
       <div id="game-area">
         <div id="tap-count">Taps: {tapCount}</div>
         <div id="tap-area" onClick={handleMultiTap} onTouchStart={handleMultiTap}>
-
-            <img style={{width:'300px', height: '300px' ,borderRadius:'50%'}} src={images}></img>
-
+          Tap Here
         </div>
       </div>
     </div>
@@ -59,4 +59,3 @@ function App() {
 }
 
 export default App;
-
