@@ -4,6 +4,12 @@ import './App.css';
 function App() {
   const [tapCount, setTapCount] = useState(0);
   const [tapHandled, setTapHandled] = useState(false);
+  const [file, setFile] = useState();
+
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+}
 
   const handleMultiTap = (event) => {
     const tapArea = document.getElementById('tap-area');
@@ -47,7 +53,13 @@ function App() {
       <div id="game-area">
         <div id="tap-count">Taps: {tapCount}</div>
         <div id="tap-area" onClick={handleMultiTap} onTouchStart={handleMultiTap}>
-          <div className="coin"></div>
+         
+
+            {file==null &&  <input type="file" onChange={handleChange} /> }
+
+         
+          <img style={{width:'300px', height:'300px',borderRadius:'50%'}} src={file} />
+          
         </div>
       </div>
     </div>
