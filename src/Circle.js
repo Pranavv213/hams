@@ -1,68 +1,38 @@
 import React, { useState } from 'react';
 import './Circle.css';
 
-function Circle({img}) {
+const TapCounter = () => {
   const [tapCount, setTapCount] = useState(0);
-  const [tapHandled, setTapHandled] = useState(false);
+  const [imageSrc, setImageSrc] = useState('samp.jpg');
 
+  const handleTap = (e) => {
+    const touchPoints = e.changedTouches ? e.changedTouches.length : 1;
+    setTapCount(tapCount + touchPoints);
+  };
 
-
-
-  const handleMultiTap = (event) => {
-    const tapArea = document.getElementById('tap-area');
-
-    if (event.type === 'click') {
-      if (!tapHandled) {
-        createTapFeedback(event.clientX, event.clientY, tapArea);
-        updateTapCount();
-      }
-      setTapHandled(false);
-    } else {
-      for (let i = 0; i < event.changedTouches.length; i++) {
-        const touch = event.changedTouches[i];
-        createTapFeedback(touch.clientX, touch.clientY, tapArea);
-        updateTapCount();
-      }
-      setTapHandled(true);
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setImageSrc(event.target.result);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
-  const createTapFeedback = (x, y, tapArea) => {
-    const tapFeedback = document.createElement('div');
-    tapFeedback.className = 'tap-feedback';
-    tapFeedback.textContent = '+1';
-    tapFeedback.style.left = `${x - tapArea.getBoundingClientRect().left}px`;
-    tapFeedback.style.top = `${y - tapArea.getBoundingClientRect().top}px`;
-
-    tapArea.appendChild(tapFeedback);
-
-    setTimeout(() => {
-      tapFeedback.remove();
-    }, 1000);
-  };
-
-  const updateTapCount = () => {
-    setTapCount(prevCount => prevCount + 1);
-  };
-
   return (
-    <div className="App">
-
-      
-     
-      <div >
-     
-     <center>
-        <div id="tap-count">{tapCount}</div>
-        </center>
-        <div id="tap-area" onClick={handleMultiTap} >
-    
-        <img style={{height:'300px',width:'300px',borderRadius:'50%'}}src={img}></img>
-          
-        </div>
+    <div className="app">
+      <div className="upload-container">
+        <label htmlFor="image-upload" className="image-upload-label">Upload</label>
+        <input type="file" id="image-upload" accept="image/*" onChange={handleFileChange} />
+      </div>
+      <div className="image-container" onClick={handleTap} onTouchStart={handleTap}>
+        <img src={imageSrc} alt="Center" className="center-image" />
+        <div className="counter">Taps: {tapCount}</div>
       </div>
     </div>
   );
-}
+};
 
-export default Circle;
+export default TapCounter;
