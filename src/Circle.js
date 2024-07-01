@@ -51,7 +51,7 @@ const Circle = ({img}) => {
          <br></br> <br></br> <br></br> <br></br> 
       <div className="image-container"  onClick={(e) => { handleTap(e); addTapEffect(); }} onTouchStart={(e) => { handleTap(e); addTapEffect(); }}>
       
-        <img src={img} style={{width:'20em'}} alt="Center" id="center-image" className="center-image" />
+        <img src={img} style={{width:'20em',height:'20em'}} alt="Center" id="center-image" className="center-image" />
        
       </div>
     </div>
