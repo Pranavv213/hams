@@ -5,26 +5,17 @@ function App() {
   const [tapCount, setTapCount] = useState(0);
 
   const handleMultiTap = (event) => {
-    // Prevent default behavior to avoid double event firing
-    event.preventDefault();
+    const tapArea = document.getElementById('tap-area');
 
-    const tapArea = event.currentTarget;
-
-    // Check if the event was triggered by touch
-    const isTouch = event.type.startsWith('touch');
-
-    if (isTouch) {
-      // Handle touch events
+    if (event.type === 'click') {
+      createTapFeedback(event.clientX, event.clientY, tapArea);
+    } else {
       for (let i = 0; i < event.changedTouches.length; i++) {
         const touch = event.changedTouches[i];
         createTapFeedback(touch.clientX, touch.clientY, tapArea);
       }
-    } else {
-      // Handle click events
-      createTapFeedback(event.clientX, event.clientY, tapArea);
     }
 
-    // Update tap count after handling tap
     updateTapCount();
   };
 
@@ -43,7 +34,7 @@ function App() {
   };
 
   const updateTapCount = () => {
-    setTapCount((prevCount) => prevCount + 1);
+    setTapCount(prevCount => prevCount + 1);
   };
 
   return (
