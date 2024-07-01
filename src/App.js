@@ -47,7 +47,7 @@ function App() {
       <div id="game-area">
         <div id="tap-count">Taps: {tapCount}</div>
         <div id="tap-area" onClick={handleMultiTap} onTouchStart={handleMultiTap}>
-          Tap Here
+          <div className="coin"></div>
         </div>
       </div>
     </div>
