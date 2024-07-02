@@ -1,43 +1,28 @@
 import React, { useState } from 'react';
 import './App.css';
-import Circle from './Circle'
-import user from './images/user.png'
-function App() {
-
-  const [imageSrc, setImageSrc] = useState(user);
+import bagImage from './images/bag.png';
+import coinImage from './images/coin.png';
+import robberImage from './images/robber.png';
+import mineImage from './images/mine.png';
+import friendsImage from './images/friends.png';
+import earnImage from './images/earn.png';
+import airDropImage from './images/rBitCoin.png';
+import Navbar from './Navbar'
+import Footer from './Footer'
+import Tap from './Tap';
+const App = () => {
   
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        setImageSrc(event.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+
   return (
     <div className="App">
-      <br></br>
-      <br></br>
-      
-      <div class="nav" style={{width:'100%'}}> 
-      <label htmlFor="image-upload" className="image-upload-label">Upload</label>
-      <input type="file" id="image-upload" accept="image/*" onChange={handleFileChange} />
-
-      &nbsp;
-      <br></br>
-      <br></br>
-      
-      
-      </div>
-
-
      
-      <Circle style={{width:'2px'}}img={imageSrc}/>
-   
+    <Navbar/>
+    <Tap/>
+     
+<Footer/>
+     
     </div>
   );
-}
+};
 
 export default App;
