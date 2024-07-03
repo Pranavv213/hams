@@ -63,8 +63,8 @@ function Tap() {
         </center>
       </div>
 
-      <div id="image-container" style={{paddingTop:'40px'}} onTouchStart={handleTouchStart} onClick={handleClick}>
-        <img  style={{width:'300px'}} src={bagImage} alt="Center Image" id="center-image" />
+      <div id="image-container" style={{paddingTop:'10px'}} onTouchStart={handleTouchStart} onClick={handleClick}>
+        <img  style={{width:'250px'}} src={bagImage} alt="Center Image" id="center-image" />
       </div>
     </div>
   )
