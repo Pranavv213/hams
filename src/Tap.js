@@ -6,6 +6,7 @@ import mineImage from './images/mine.png';
 import friendsImage from './images/friends.png';
 import earnImage from './images/earn.png';
 import airDropImage from './images/rBitCoin.png';
+import zombie from './images/zombie.png'
 import { signInWithGoogle } from "./firebase-config";
 
 import { db } from "./firebase-config";
@@ -166,11 +167,11 @@ function Tap() {
         </center>
       </div>
 {localStorage.getItem('email') &&  <div id="image-container" style={{paddingTop:'10px'}} onTouchStart={handleTouchStart} onClick={handleClick}>
-        <img  style={{width:'250px'}} src={bagImage} alt="Center Image" id="center-image" />
+        <img  style={{width:'250px'}} src={zombie} alt="Center Image" id="center-image" />
       </div>}
 
       {!localStorage.getItem('email') &&  <div id="image-container" style={{paddingTop:'10px'}} onClick={signInWithGoogle}>
-        <img  style={{width:'250px'}} src={bagImage} alt="Center Image" id="center-image" />
+        <img  style={{width:'250px'}} src={zombie} alt="Center Image" id="center-image" />
       </div>}
      
     </div>

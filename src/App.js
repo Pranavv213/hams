@@ -10,12 +10,13 @@ import airDropImage from './images/rBitCoin.png';
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Tap from './Tap';
+import forest from './images/forest.jpg'
 
 const App = () => {
   
 
   return (
-    <div className="App" >
+    <div className="App" style={{backgroundImage:forest}} >
      
 
     <Navbar/>
