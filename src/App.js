@@ -15,7 +15,7 @@ const App = () => {
   
 
   return (
-    <div className="App" style={{backgroundColor:'gold'}}>
+    <div className="App" >
      
 
     <Navbar/>
