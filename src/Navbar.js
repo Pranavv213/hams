@@ -2,6 +2,7 @@ import React from 'react'
 import './Navbar.css'
 import google from './images/google.png'
 
+
 import { signInWithGoogle } from "./firebase-config";
 import { db } from "./firebase-config";
 import {
@@ -15,7 +16,7 @@ import {
 
 function Navbar() {
   return (
-    <div className='nav'>
+    <div className='nav' style={{backgroundColor:'black'}}>
 
 
 
@@ -26,10 +27,10 @@ function Navbar() {
         <img  src={google} style={{width:'2em'}}/> &nbsp; <l><b>Sign in</b> </l>
       </button>}
 
-      {localStorage.getItem('name') && <img src={localStorage.getItem('profilePic')}  />}
+      {localStorage.getItem('name') && <img src={localStorage.getItem('profilePic')} style={{width:'3em',borderRadius:'50%'}}  />}
 
    
-      <button className='button-46' style={{width:'10em'}}>Join The Gang</button>
+     
      
     
       

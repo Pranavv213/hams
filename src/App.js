@@ -10,7 +10,7 @@ import airDropImage from './images/rBitCoin.png';
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Tap from './Tap';
-import forest from './images/forest.jpg'
+import forest from './images/forest.png'
 
 const App = () => {
   
@@ -21,8 +21,9 @@ const App = () => {
  <br></br>
  <br></br>
 
-    <Navbar/>
-    
+   <center>
+    <Tap/>
+    </center>
     
     {/* <Footer/> */}
      
