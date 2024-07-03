@@ -154,25 +154,25 @@ function Tap() {
   return (
     <div> 
      <div >
-      <center>
-        <div style={{paddingTop:'30px'}} className="coins">
+     
+        <div  >
           <div  >
-        <img style={{width:'50px'}} src={coinImage} alt="Coin Icon" id="coin-icon" />
+        <img  src={coinImage} alt="Coin Icon"  />
         </div>
-        <div style={{fontSize:'25px',color:'goldenrod'}}>
+        <div >
           <b>
        { tapCount}</b>
        </div>
         </div>
-        </center>
+        
       </div>
-{localStorage.getItem('email') &&  <div id="image-container" style={{paddingTop:'10px'}} onTouchStart={handleTouchStart} onClick={handleClick}>
-        <img  style={{width:'45em'}} src={zombie} alt="Center Image" id="center-image" />
+{/* {localStorage.getItem('email') &&  <div id="image-container" style={{paddingTop:'10px'}} onTouchStart={handleTouchStart} onClick={handleClick}>
+        <img  style={{width:'5em'}} src={zombie} alt="Center Image" id="center-image" />
       </div>}
 
       {!localStorage.getItem('email') &&  <div id="image-container" style={{paddingTop:'10px'}} onClick={signInWithGoogle}>
-        <img  style={{width:'45em'}} src={zombie} alt="Center Image" id="center-image" />
-      </div>}
+        <img  style={{width:'5em'}} src={zombie} alt="Center Image" id="center-image" />
+      </div>} */}
      
     </div>
   )

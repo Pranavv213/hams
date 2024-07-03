@@ -16,15 +16,12 @@ const App = () => {
   
 
   return (
-    <div className="App" style={{backgroundImage:`url(${forest})`}} >
-     
+    <div >
+ 
+ <br></br>
+ <br></br>
 
     <Navbar/>
-   
-  
-    <Tap/>
-<br></br><br></br><br></br><br></br><br></br><br></br><br/>
-    <Footer/>
     
     
     {/* <Footer/> */}

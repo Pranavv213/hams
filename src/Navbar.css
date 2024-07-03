@@ -95,3 +95,7 @@
   box-shadow: none;
   transform: translateY(0);
 }
+.nav{
+    display:flex;
+    justify-content:space-around;
+}

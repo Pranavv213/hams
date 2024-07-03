@@ -3,26 +3,35 @@ import './Navbar.css'
 import google from './images/google.png'
 
 import { signInWithGoogle } from "./firebase-config";
+import { db } from "./firebase-config";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
 function Navbar() {
   return (
-    <div style={{width:'100%'}}>
+    <div className='nav'>
 
 
 
-<center>
-  <br></br><br></br>
 
-{!localStorage.getItem('name') && <button className='button-28' style={{width:'11em'}} onClick={signInWithGoogle}>
-        <img style={{width:'2em'}} src={google}/> &nbsp; <l><b>Sign in</b> </l>
+
+
+{!localStorage.getItem('name') && <button className='button-28' style={{width:'9em'}} onClick={signInWithGoogle}>
+        <img  src={google} style={{width:'2em'}}/> &nbsp; <l><b>Sign in</b> </l>
       </button>}
 
+      {localStorage.getItem('name') && <img src={localStorage.getItem('profilePic')}  />}
 
-
-<br></br>
+   
       <button className='button-46' style={{width:'10em'}}>Join The Gang</button>
-      </center>
-      {localStorage.getItem('name') && <img src={localStorage.getItem('profilePic')} style={{width:'4em',borderRadius:"50%",marginLeft:'40px',position:'absolute',marginTop:'-65px'}} />}
+     
+    
       
       {/* <img src={localStorage.getItem("profilePic")} /> */}
 
