@@ -16,7 +16,7 @@ const App = () => {
   
 
   return (
-    <div className="App" style={{backgroundImage:forest}} >
+    <div className="App" style={{backgroundImage:`url(${forest})`}} >
      
 
     <Navbar/>
