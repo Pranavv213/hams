@@ -5,8 +5,8 @@
 }
 
 #image-container {
-    width: 20em;
-    height: 65vmin;
+    width: 40em;
+    height: 20em;
     display: flex;
     justify-content: center;
     align-items: center;
