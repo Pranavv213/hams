@@ -167,11 +167,11 @@ function Tap() {
         </center>
       </div>
 {localStorage.getItem('email') &&  <div id="image-container" style={{paddingTop:'10px'}} onTouchStart={handleTouchStart} onClick={handleClick}>
-        <img  style={{width:'250px'}} src={zombie} alt="Center Image" id="center-image" />
+        <img  style={{width:'45em'}} src={zombie} alt="Center Image" id="center-image" />
       </div>}
 
       {!localStorage.getItem('email') &&  <div id="image-container" style={{paddingTop:'10px'}} onClick={signInWithGoogle}>
-        <img  style={{width:'250px'}} src={zombie} alt="Center Image" id="center-image" />
+        <img  style={{width:'45em'}} src={zombie} alt="Center Image" id="center-image" />
       </div>}
      
     </div>
