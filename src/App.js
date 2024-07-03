@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect,useRef } from 'react';
 import './App.css';
 import bagImage from './images/bag.png';
 import coinImage from './images/coin.png';
@@ -12,8 +12,10 @@ import Footer from './Footer'
 import Tap from './Tap';
 import forest from './images/forest.png'
 
+
 const App = () => {
-  
+
+
 
   return (
     <div >

@@ -13,6 +13,7 @@ import blood from './images/blood.png'
 import Navbar from './Navbar';
 import zombiesound1 from './sounds/zombiesound1.mp3'
 import gun from './images/gun.png'
+import zombiemusic from './sounds/zombiemusic.mp3'
 
 import { db } from "./firebase-config";
 import {
@@ -31,8 +32,10 @@ function Tap() {
     const [tapCount, setTapCount] = useState(0);
     const [usercoins, setUsercoins] = useState({});
     const usersCollectionRef = collection(db, "userscoins");
+    const [musicPlayed, setMusicPlayed] = useState(false);
     const audioRef = useRef(null);
-
+    const audioBackgroundRef = useRef(null);
+    
     
     const [gifPosition, setGifPosition] = useState(null);
     
@@ -150,7 +153,10 @@ function Tap() {
     };
     useEffect(()=>{
       
-
+      if (!audioBackgroundRef.current) {
+        audioBackgroundRef.current.play();
+      }
+  
     getUsers();
     },[])
 
@@ -202,6 +208,12 @@ function Tap() {
       )}
 
     <audio ref={audioRef} src={zombiesound1} />
+    try {
+      <audio ref={audioBackgroundRef} src={zombiemusic} loop autoPlay />
+    } catch (error) {
+      
+    }
+    
 
       {!localStorage.getItem('email') &&  <div style={{paddingTop:'10px'}} onClick={signInWithGoogle}>
         <img  style={{width:'20em',height:'30em'}} src={zombie} alt="Center Image"  />
