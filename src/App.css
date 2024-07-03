@@ -1,4 +1,7 @@
+body{
 
+  overflow-y: hidden;
+}
 .App{
   display: flex;
   flex-direction: column;

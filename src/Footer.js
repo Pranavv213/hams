@@ -39,7 +39,7 @@ function Footer() {
       <div style={{marginTop:'17px',color:'white'}}>&nbsp;&nbsp;Airdrop</div>
       </div>
        
-     <br></br>
+     <br></br><br/>
        
     </div>
   )
