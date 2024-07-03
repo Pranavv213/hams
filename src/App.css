@@ -1,19 +1,22 @@
-body{
+
+
+@media only screen and (max-width: 767px)
+{
+  body{
 
   
- background-color: black;
-  background-size:cover;
-  background-repeat: no-repeat;
-  overflow-x: hidden;
- 
+    background-color: black;
+     background-size:cover;
+     background-repeat: no-repeat;
+     overflow-x: hidden;
+    
+   }
+   .App{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding:'2em'
+   }
+   
 }
-.App{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding:'2em'
-}
-
-
-  

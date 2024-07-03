@@ -16,7 +16,7 @@ import {
 
 function Navbar() {
   return (
-    <div className='nav' style={{backgroundColor:'black'}}>
+    <div className='nav' >
 
 
 
@@ -27,7 +27,9 @@ function Navbar() {
         <img  src={google} style={{width:'2em'}}/> &nbsp; <l><b>Sign in</b> </l>
       </button>}
 
-      {localStorage.getItem('name') && <img src={localStorage.getItem('profilePic')} style={{width:'3em',borderRadius:'50%'}}  />}
+      {localStorage.getItem('name') && <div style={{color:'white'}}><b style={{color:'white'}}>{localStorage.getItem('name') }
+        
+      </b> <br></br><br></br> Level 1/10</div>  }
 
    
      

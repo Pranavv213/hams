@@ -20,6 +20,10 @@ const App = () => {
   return (
     <div >
  
+ <div className="mobile-warning">
+        <h1>This site is best viewed on a mobile device. Please switch to a mobile device.</h1>
+      </div>
+  
  <br></br>
  <br></br>
 
