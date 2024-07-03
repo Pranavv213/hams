@@ -1,7 +1,10 @@
 
 
-@media only screen and (max-width: 767px)
+@media only screen and (max-width: 557px)
 {
+  .Tap{
+    visibility: visible;
+  }
   body{
 
   
@@ -18,5 +21,18 @@
      align-items: center;
      padding:'2em'
    }
+   .mobile-warning{
+  display: none;
+  }
    
+}
+
+@media  (min-width: 558px)
+{
+  .Tap{
+    visibility: hidden;
+  }
+  .mobile-warning{
+    display: block;
+  }
 }

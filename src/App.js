@@ -28,7 +28,9 @@ const App = () => {
  <br></br>
 
    <center>
+    <div className='Tap'>
     <Tap/>
+    </div>
     </center>
     
     {/* <Footer/> */}
