@@ -6,9 +6,10 @@ import mineImage from './images/mine.png';
 import friendsImage from './images/friends.png';
 import earnImage from './images/earn.png';
 import airDropImage from './images/rBitCoin.png';
+import './Footer.css'
 function Footer() {
   return (
-    <div>
+    <div className='Footer'>
        <div id="navbar">
         <div className="nav-item">
           <img src={robberImage} alt="Robber Icon" id="robber" />
