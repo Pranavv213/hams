@@ -1,7 +1,18 @@
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "@firebase/firestore";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAgs7LcsP1CjOawT0Ec-jx0S1kqBD1am7k",
@@ -21,6 +32,10 @@ export const auth = getAuth(app);
 
 const provider = new GoogleAuthProvider();
 
+export const db = getFirestore(app);
+
+const usersCollectionRef = collection(db, "userscoins");
+
 export const signInWithGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -31,7 +46,10 @@ export const signInWithGoogle = () => {
       localStorage.setItem("name", name);
       localStorage.setItem("email", email);
       localStorage.setItem("profilePic", profilePic);
+    
       window.location.reload();
+   
+     
 
 
     })
