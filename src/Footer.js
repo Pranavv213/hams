@@ -9,28 +9,46 @@ import airDropImage from './images/rBitCoin.png';
 import './Footer.css'
 function Footer() {
   return (
-    <div className='Footer'>
-       <div id="navbar">
-        <div className="nav-item">
-          <img src={robberImage} alt="Robber Icon" id="robber" />
-        </div>
-        <div className="nav-item">
-          <img src={mineImage} alt="Mine Icon" />
-          <span>Mine</span>
-        </div>
-        <div className="nav-item">
-          <img src={friendsImage} alt="Friends Icon" />
-          <span>Friends</span>
-        </div>
-        <div className="nav-item">
-          <img src={earnImage} alt="Earn Icon" />
-          <span>Earn</span>
-        </div>
-        <div className="nav-item">
-          <img src={airDropImage} alt="Air Drop Icon" />
-          <span>Air Drop</span>
-        </div>
+    <div className='Footer' >
+
+
+    <div style={{width:'100px',marginTop:'7px'}}> <img style={{width:'100px',height:'150px'}} src={robberImage}/></div>
+     
+      <div >  
+
+        <div style={{width:'5em',marginTop:'50px'}}><img  style={{width:'5em',marginBotton:'5px'}} src={mineImage}/></div>
+      
+      <br></br>
+      
+     
+      <div style={{marginTop:'10px',color:'white'}}>&nbsp;&nbsp;&nbsp;&nbsp;<b>Mine</b></div>
+      
       </div>
+      <div>  
+        <div style={{width:'5em',marginTop:'63px'}}><img  style={{width:'5em',marginBotton:'300px'}} src={friendsImage}/></div>
+      
+        <div style={{marginTop:'15px',color:'white'}}>&nbsp;&nbsp;<b>Friends</b></div>
+      </div>
+     
+      <div>  
+      <img  style={{width:'5em',marginTop:'60px'}} src={earnImage}/>
+      <div style={{marginTop:'17px',color:'white'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Earn</b></div>
+      </div>
+      <div>  
+      <img  style={{width:'5em',marginTop:'60px'}} src={airDropImage}/>
+      <div style={{marginTop:'17px',color:'white'}}>&nbsp;&nbsp;<b>Airdrop</b></div>
+      </div>
+       
+       <br></br>
+       <br></br> <br></br>
+       <br></br> <br></br>
+       <br></br> <br></br>
+       <br></br> <br></br>
+       <br></br>
+       <br></br> <br></br>
+       <br></br> 
+       
+       
     </div>
   )
 }

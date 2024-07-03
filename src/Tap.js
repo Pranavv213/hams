@@ -6,6 +6,7 @@ import mineImage from './images/mine.png';
 import friendsImage from './images/friends.png';
 import earnImage from './images/earn.png';
 import airDropImage from './images/rBitCoin.png';
+import './Tap.css'
 
 function Tap() {
 
@@ -47,14 +48,23 @@ function Tap() {
       handleTap(event.clientX, event.clientY, 1);
     };
   return (
-    <div>
-     <div id="coin-container">
-        <img src={coinImage} alt="Coin Icon" id="coin-icon" />
-        <span id="tap-count">{tapCount}</span>
+    <div> 
+     <div >
+      <center>
+        <div style={{paddingTop:'30px'}} className="coins">
+          <div  >
+        <img style={{width:'50px'}} src={coinImage} alt="Coin Icon" id="coin-icon" />
+        </div>
+        <div style={{fontSize:'25px',color:'goldenrod'}}>
+          <b>
+       {tapCount}</b>
+       </div>
+        </div>
+        </center>
       </div>
 
-      <div id="image-container" onTouchStart={handleTouchStart} onClick={handleClick}>
-        <img src={bagImage} alt="Center Image" id="center-image" />
+      <div id="image-container" style={{paddingTop:'40px'}} onTouchStart={handleTouchStart} onClick={handleClick}>
+        <img  style={{width:'300px'}} src={bagImage} alt="Center Image" id="center-image" />
       </div>
     </div>
   )

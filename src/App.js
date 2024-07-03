@@ -10,22 +10,22 @@ import airDropImage from './images/rBitCoin.png';
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Tap from './Tap';
-import { signInWithGoogle } from "./firebase-config";
+
 const App = () => {
   
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor:'gold'}}>
      
+
     <Navbar/>
+   
+  
     <Tap/>
+
+    <Footer/>
     
-    <button class="button-28" onClick={signInWithGoogle}>
-        Sign in with Google
-      </button>
-      <h1>{localStorage.getItem("name")}</h1>
-      <h1>{localStorage.getItem("email")}</h1>
-      <img src={localStorage.getItem("profilePic")} />
+    
     {/* <Footer/> */}
      
     </div>
