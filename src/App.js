@@ -76,7 +76,9 @@ const App = () => {
       </Navbar>
 
    <center>
+  
    <br></br>
+   
     <Zombie/>
 
   

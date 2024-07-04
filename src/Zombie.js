@@ -187,6 +187,9 @@ const App = () => {
        </center>}
      */}
        <center>
+       <div  class="zombielife" style={{height:'2em',width:'30%',border:'2px solid black'}}>
+    <div style={{height:'1.5em',width:`${100-tapCount/10}%`,backgroundColor:'yellow'}}></div>
+   </div>
           <div >
         <img style={{width:'5em'}} src={coinImage}   />
         <div >
