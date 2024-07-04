@@ -6,7 +6,7 @@ import mineImage from './images/weapons.png';
 import friendsImage from './images/friends.png';
 import earnImage from './images/earn.png';
 import airDropImage from './images/rBitCoin.png';
-import zombie from './images/zombie.gif'
+import zombie from './images/unscreen.gif'
 import { signInWithGoogle } from "./firebase-config";
 import BloodDroplets from './BloodDroplets';
 import blood from './images/blood.png'
@@ -14,6 +14,7 @@ import Navbar from './Navbar';
 import zombiesound1 from './sounds/zombiesound1.mp3'
 import gun from './images/gun.png'
 import zombiemusic from './sounds/zombiemusic.mp3'
+import zombie2 from './images/unscreen2.gif'
 
 import { db } from "./firebase-config";
 import {
@@ -36,7 +37,7 @@ function Tap() {
     const audioRef = useRef(null);
     const audioBackgroundRef = useRef(null);
     
-    
+    const [zombieImg,setZombieImg]=useState(zombie)
     const [gifPosition, setGifPosition] = useState(null);
     
    
@@ -50,6 +51,8 @@ function Tap() {
     };
 
     const handleTap = async () => {
+
+     
       setTapCount(prevCount => prevCount + 1);
       
       if(localStorage.getItem('email')!=null && usercoins.id)
@@ -86,14 +89,15 @@ function Tap() {
       const x = event.clientX;
     const y = event.clientY;
     setGifPosition({ x, y });
-
+    setZombieImg(zombie2)
     if (audioRef.current) {
       audioRef.current.play();
     }
     // Remove the GIF after 2 seconds
     setTimeout(() => {
       setGifPosition(null);
-    }, 1000);
+      setZombieImg(zombie)
+    }, 200);
       handleTap();
     };
 
@@ -189,7 +193,7 @@ function Tap() {
       
 {localStorage.getItem('email') &&  <div   style={{paddingTop:'10px'}}  >
 
-        <img  style={{width:'20em',height:'30em'}} src={zombie} alt="Center Image"  />
+        <img  style={{width:'20em',height:'30em'}} src={zombieImg} alt="Center Image"  />
         <img style={{width:'15em'}} src={gun} onClick={handleClick} />
       </div>}
       {gifPosition && (
@@ -216,7 +220,7 @@ function Tap() {
     
 
       {!localStorage.getItem('email') &&  <div style={{paddingTop:'10px'}} onClick={signInWithGoogle}>
-        <img  style={{width:'20em',height:'30em'}} src={zombie} alt="Center Image"  />
+        <img  style={{width:'20em',height:'30em'}} src={zombieImg} alt="Center Image"  />
       </div>}
    
     </div>
