@@ -23,7 +23,7 @@ const App = () => {
   const backgroundImage = backgroundImg;
   const [shotPosition,setShotPosition]=useState({})
   const [imageSrc, setImageSrc] = useState(firstImage);
-  const [size, setSize] = useState(30); // initial size percentage
+  const [size, setSize] = useState(45); // initial size percentage
   const [tapCount, setTapCount] = useState(0);
   const [usercoins, setUsercoins] = useState({});
   const [showBackground, setShowBackground] = useState(false);
@@ -44,7 +44,7 @@ const App = () => {
 
    
     setTapCount(prevCount => prevCount + 1);
-    if(size>=35)
+    if(size>=50)
         {
             setSize((prevSize) =>  prevSize - 5)
         }
@@ -159,7 +159,7 @@ const App = () => {
               
              
               setTimeout(() => setShowBackground(false), 2000); // revert background after 2 seconds
-              return 30; // reset size to initial size
+              return 45; // reset size to initial size
             }
           });
          
@@ -197,7 +197,7 @@ const App = () => {
        </center>
     
 
-       {showShot && <img src={shot} style={{width:'1em', position: 'absolute', left: shotPosition.x, top: shotPosition.y+30}}></img>}
+       {showShot && <img src={shot} style={{width:'1em', position: 'absolute', left: shotPosition.x, top: shotPosition.y+45}}></img>}
 {localStorage.getItem('email') &&  <div     >
 
     <img
