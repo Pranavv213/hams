@@ -21,30 +21,36 @@ const App = () => {
   const firstImage = zombie1;
   const secondImage = zombie2;
   const backgroundImage = backgroundImg;
-
+  const [shotPosition,setShotPosition]=useState({})
   const [imageSrc, setImageSrc] = useState(firstImage);
-  const [size, setSize] = useState(2); // initial size percentage
+  const [size, setSize] = useState(30); // initial size percentage
   const [tapCount, setTapCount] = useState(0);
   const [usercoins, setUsercoins] = useState({});
   const [showBackground, setShowBackground] = useState(false);
   const [showShot,setShowShot]=useState(false)
+ 
   const usersCollectionRef = collection(db, "userscoins");
 
   const updateUserCoins = async () => {
     const userDoc = doc(db, "userscoins", usercoins.id);
     const newFields = { 
       email:usercoins.email,
-      coins:tapCount
+      coins:tapCount+1
      };
     await updateDoc(userDoc, newFields);
   };
 
-  const handleTap = async () => {
+  const handleTap = async (e) => {
 
    
     setTapCount(prevCount => prevCount + 1);
-    setSize((prevSize) =>  prevSize - 5)
+    if(size>=35)
+        {
+            setSize((prevSize) =>  prevSize - 5)
+        }
+   
     setShowShot(true)
+    setShotPosition({x: e.clientX,y: e.clientX})
     setTimeout(() => {
         setShowShot(false);
       }, 1000);
@@ -150,8 +156,10 @@ const App = () => {
               return prevSize + 1;
             } else {
               setShowBackground(true);
+              
+             
               setTimeout(() => setShowBackground(false), 2000); // revert background after 2 seconds
-              return 2; // reset size to initial size
+              return 30; // reset size to initial size
             }
           });
          
@@ -163,12 +171,12 @@ const App = () => {
 
   return (
     <div className='image-container' >
-    {showBackground && 
+    {/* {showBackground && 
           <div >
         <img src={backgroundImg} style={{width:'100%',marginTop:'2px',height:'45em'}}></img>
        </div>
-       }
-    {!showBackground && <center>
+       } */}
+    {/* {!showBackground && <center>
           <div >
         <img style={{width:'5em'}} src={coinImage}   />
         <div >
@@ -177,17 +185,25 @@ const App = () => {
        </div>
        </div>
        </center>}
-    
-    
+     */}
+       <center>
+          <div >
+        <img style={{width:'5em'}} src={coinImage}   />
+        <div >
+          <b style={{color:'white'}}>
+       { tapCount}</b>
+       </div>
+       </div>
+       </center>
     
 
-       {showShot && <img src={shot} style={{width:'6em',  position: 'fixed'}}></img>}
+       {showShot && <img src={shot} style={{width:'1em', position: 'absolute', left: shotPosition.x, top: shotPosition.y+30}}></img>}
 {localStorage.getItem('email') &&  <div     >
 
     <img
         src={imageSrc}
         alt="Changing"
-        style={{ width: `${size}%`, height: 'auto' }} onClick={handleTap}
+        style={{ width: `${size}%`, height: 'auto',outline:'none',userSelect:'none' }} onClick={handleTap}
       />
 
 </div>}
@@ -200,7 +216,7 @@ const App = () => {
 <img
         src={imageSrc}
         alt="Changing"
-        style={{ width: `${size}%`, height: 'auto' }}
+        style={{ width: `${size}%`, height: 'auto',outline:'none',userSelect:'none' }}
       />
 </div>}
 
