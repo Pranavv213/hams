@@ -3,7 +3,7 @@ import './App.css';
 import bagImage from './images/bag.png';
 import coinImage from './images/coin.png';
 import robberImage from './images/robber.png';
-import mineImage from './images/mine.png';
+import mineImage from './images/weapons.png';
 import friendsImage from './images/friends.png';
 import earnImage from './images/earn.png';
 import airDropImage from './images/rBitCoin.png';
@@ -30,6 +30,7 @@ const App = () => {
    <center>
     <div className='Tap'>
     <Tap/>
+    <Footer/>
     </div>
     </center>
     

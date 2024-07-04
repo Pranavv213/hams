@@ -1,9 +1,19 @@
 .Footer{
     display: flex;
-    background-color: rgb(118, 88, 12);
+    background-color: #24262b;
     width:100%;
     justify-content: center;
     height:'2px'
+
    
     
+}
+
+.footer-icons:{
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+}
+
+.footer-icons:hover{
+    transform: translateY(-5px); 
 }
