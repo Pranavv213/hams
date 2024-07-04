@@ -23,13 +23,7 @@ function Navbar() {
 
 
 
-{!localStorage.getItem('name') && <button className='button-28' style={{width:'9em'}} onClick={signInWithGoogle}>
-        <img  src={google} style={{width:'2em'}}/> &nbsp; <l><b>Sign in</b> </l>
-      </button>}
 
-      {localStorage.getItem('name') && <div style={{color:'white'}}><b style={{color:'white'}}>{localStorage.getItem('name') }
-        
-      </b> <br></br><br></br> Level 1/10</div>  }
 
    
      

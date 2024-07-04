@@ -9,7 +9,7 @@ import airDropImage from './images/rBitCoin.png';
 import './Footer.css'
 function Footer() {
   return (
-    <div className='Footer' style={{height:'10em',marginTop:'10px'}} >
+    <div className='Footer' style={{height:'10em',marginTop:'10px',position: 'fixed'}} >
 
 
     

@@ -7,9 +7,9 @@
   }
   body{
 
-  
-    background-color: black;
-     background-size:cover;
+    height: 100vh;
+      background-image: url('./zombieimg/forest\ -\ Copy.jpg');
+   
      background-repeat: no-repeat;
      overflow-x: hidden;
     
