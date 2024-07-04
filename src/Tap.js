@@ -193,7 +193,7 @@ function Tap() {
       
 {localStorage.getItem('email') &&  <div   style={{paddingTop:'10px'}}  >
 
-        <img  style={{width:'20em',height:'50em'}} src={zombieImg} alt="Center Image"  />
+        <img  style={{width:'20em',height:'30em'}} src={zombieImg} alt="Center Image"  />
         <img style={{width:'15em'}} src={gun} onClick={handleClick} />
       </div>}
       {gifPosition && (
@@ -220,7 +220,7 @@ function Tap() {
     
 
       {!localStorage.getItem('email') &&  <div style={{paddingTop:'10px'}} onClick={signInWithGoogle}>
-        <img  style={{width:'20em',height:'50em'}} src={zombieImg} alt="Center Image"  />
+        <img  style={{width:'20em',height:'30em'}} src={zombieImg} alt="Center Image"  />
       </div>}
    
     </div>
