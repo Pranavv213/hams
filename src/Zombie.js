@@ -125,7 +125,7 @@ const App = () => {
       else 
       {
         
-       alert('Please Sign In')
+      //  alert('Please Sign In')
         
       }
     
@@ -215,7 +215,9 @@ const App = () => {
 
 
 
-{!localStorage.getItem('email') &&  <div  onClick={signInWithGoogle}>
+{!localStorage.getItem('email') &&  <div  onClick={()=>{
+  alert('Sign in with Telegram')
+}}>
 <img
         src={imageSrc}
         alt="Changing"

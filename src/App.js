@@ -55,6 +55,8 @@ const App = () => {
                 onAuthCallback={(data) => {
                     localStorage.setItem('email',data.username)
                     localStorage.setItem('profilePic',data.photo_url)
+                    window.location.reload();
+   
                     // call your backend here to validate the data and sign in the user
                 }}
             />
@@ -63,13 +65,13 @@ const App = () => {
            
          
 
-          {!localStorage.getItem('name') && <button className='button-28' style={{width:'9em'}} onClick={signInWithGoogle}>
+          {/* {!localStorage.getItem('name') && <button className='button-28' style={{width:'9em'}} onClick={signInWithGoogle}>
         <img  src={google} style={{width:'2em'}}/> &nbsp; <l><b>Sign in</b> </l>
       </button>}
 
       {localStorage.getItem('name') && <div style={{color:'white'}}> <b style={{color:'white'}}>{localStorage.getItem('name') }
         
-      </b>  </div>  }
+      </b>  </div>  } */}
 
           </Navbar.Brand>
           <Nav className="me-auto">
