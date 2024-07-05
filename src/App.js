@@ -11,6 +11,7 @@ import Footer from './Footer'
 import Tap from './Tap';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { LoginButton } from '@telegram-auth/react';
 
 import Zombie from './Zombie';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -48,6 +49,20 @@ const App = () => {
  <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="#home">
+
+            {localStorage.getItem('email') &&  <LoginButton
+                botUsername='Tet1234bot'
+                onAuthCallback={(data) => {
+                    localStorage.setItem('email',data.username)
+                    localStorage.setItem('profilePic',data.photo_url)
+                    // call your backend here to validate the data and sign in the user
+                }}
+            />
+            }
+
+            {localStorage.getItem('email') && <div style={{color:'white'}}>{
+              localStorage.getItem('email')}</div>}
+         
 
           {!localStorage.getItem('name') && <button className='button-28' style={{width:'9em'}} onClick={signInWithGoogle}>
         <img  src={google} style={{width:'2em'}}/> &nbsp; <l><b>Sign in</b> </l>
