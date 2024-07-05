@@ -50,7 +50,7 @@ const App = () => {
         <Container>
           <Navbar.Brand href="#home">
 
-            {localStorage.getItem('email') &&  <LoginButton
+            {!localStorage.getItem('email') &&  <LoginButton
                 botUsername='Tet1234bot'
                 onAuthCallback={(data) => {
                     localStorage.setItem('email',data.username)
