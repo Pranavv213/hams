@@ -12,8 +12,10 @@ import {
   import { auth } from "./firebase-config";
   import Toast from 'react-bootstrap/Toast';
   import { BrowserRouter as Router, Route,Routes, Switch, Link } from 'react-router-dom';
+  import { useNavigate } from 'react-router-dom';
 function Login() {
 
+    const navigate = useNavigate();
     const [showA, setShowA] = useState(true);
     const [show, setShow] = useState(true);
     const toggleShowA = () => setShowA(!showA);
@@ -62,6 +64,7 @@ function Login() {
         if(user.user.emailVerified)
           {
             localStorage.setItem('email',user.user.email)
+            navigate('/');
           }
   
           else{

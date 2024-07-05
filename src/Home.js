@@ -56,10 +56,12 @@ import { auth } from "./firebase-config";
 
 const App = () => {
 
+
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [errormsg,seterrormsg]=useState('')
   
 
   const [user, setUser] = useState({});
@@ -86,10 +88,18 @@ const App = () => {
         })
         console.log(data)
       }).catch((error)=>{
+        if(registerPassword.length<6)
+            {
+                seterrormsg('Password should be atleast 6 characters')
+            }
         console.log(error)
       })
      
     } catch (error) {
+        if(registerPassword.length<6)
+            {
+                seterrormsg('Password should be atleast 6 characters')
+            }
       console.log(error.message);
     }
   };
@@ -123,65 +133,18 @@ const App = () => {
   return (   
     <div >
  
- <div>
-        <h3> Register User </h3>
-        <input
-          placeholder="Email..."
-          onChange={(event) => {
-            setRegisterEmail(event.target.value);
-          }}
-        />
-        <input
-          placeholder="Password..."
-          onChange={(event) => {
-            setRegisterPassword(event.target.value);
-          }}
-        />
-
-        <button onClick={register}> Create User</button>
-      </div>
-
-      <div>
-        <h3> Login </h3>
-        <input
-          placeholder="Email..."
-          onChange={(event) => {
-            setLoginEmail(event.target.value);
-          }}
-        />
-        <input
-          placeholder="Password..."
-          onChange={(event) => {
-            setLoginPassword(event.target.value);
-          }}
-        />
-
-        <button onClick={login}> Login</button>
-      </div>
-
-      <h4> User Logged In: </h4>
-      {user?.email}
-
-      <button onClick={logout}> Sign Out </button>
-
+ 
  <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="#home">
 
-            {/* <LoginButton
-                botUsername='Tet1234bot'
-                onAuthCallback={(data) => {
-                    localStorage.setItem('email',data.username)
-                    localStorage.setItem('profilePic',data.photo_url)
-                    window.location.reload();
-   
-                    // call your backend here to validate the data and sign in the user
-                }}
-            /> */}
-             show={show} onHide={handleClose} animation={false}
+          
+            
             <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
         <Modal.Title>
+
+           
           Sign Up
           </Modal.Title>
         </Modal.Header>
@@ -211,9 +174,11 @@ const App = () => {
         </div>
         <br></br>
 
+       
         <Button variant="primary" style={{width:'100%'}} onClick={register}>Create Account
         </Button>
-        
+        <br></br> <br></br> <br></br>
+       {errormsg}
         </Modal.Body>
         <center>
         <Modal.Footer>
@@ -227,7 +192,9 @@ const App = () => {
         </Modal.Footer>
         </center>
       </Modal>
-            <button class="button-28" onClick={handleShow}>Sign In</button>
+
+      {localStorage.getItem('email')? <div className='button-28'>{localStorage.getItem('email')}</div>:<div>  <button class="button-28" onClick={handleShow}>Sign In</button></div>}
+          
             
 
            
@@ -251,7 +218,7 @@ const App = () => {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search </Button>
+            
           </Form></Nav.Link>
             
             
