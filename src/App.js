@@ -50,7 +50,7 @@ const App = () => {
         <Container>
           <Navbar.Brand href="#home">
 
-            {!localStorage.getItem('email') &&  <LoginButton
+            <LoginButton
                 botUsername='Tet1234bot'
                 onAuthCallback={(data) => {
                     localStorage.setItem('email',data.username)
@@ -58,10 +58,9 @@ const App = () => {
                     // call your backend here to validate the data and sign in the user
                 }}
             />
-            }
+            
 
-            {localStorage.getItem('email') && <div style={{color:'white'}}>{
-              localStorage.getItem('email')}</div>}
+           
          
 
           {!localStorage.getItem('name') && <button className='button-28' style={{width:'9em'}} onClick={signInWithGoogle}>
