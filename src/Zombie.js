@@ -17,6 +17,7 @@ import {
 import { signInWithGoogle } from "./firebase-config";
 
 
+
 const App = () => {
   const firstImage = zombie1;
   const secondImage = zombie2;
@@ -28,6 +29,13 @@ const App = () => {
   const [usercoins, setUsercoins] = useState({});
   const [showBackground, setShowBackground] = useState(false);
   const [showShot,setShowShot]=useState(false)
+  const [visible, setVisible] = useState(false);
+  const handleClick = () => {
+    setVisible(true);
+    setTimeout(() => {
+        setVisible(false);
+    }, 7000)}
+
  
   const usersCollectionRef = collection(db, "userscoins");
 
@@ -208,6 +216,7 @@ const App = () => {
         alt="Changing"
         style={{ width: `${size}%`, height: 'auto',outline:'none',userSelect:'none' }} onClick={handleTap}
       />
+     
 
 </div>}
 
@@ -216,7 +225,8 @@ const App = () => {
 
 
 {!localStorage.getItem('email') &&  <div  onClick={()=>{
-  alert('Sign in with Telegram')
+  // alert('Sign in with Telegram')
+  handleClick()
 }}>
 <img
         src={imageSrc}
@@ -224,9 +234,16 @@ const App = () => {
         style={{ width: `${size}%`, height: 'auto',outline:'none',userSelect:'none' }}
       />
 </div>}
+<div  className={`button-85 ${visible ? 'visible' : ''}`}  style={{position:'absolute',top:'10em',right:'5em', width:'25em',height:'4em',borderRadius:'5px',color:'white'}}>&nbsp;&nbsp;<i class="fa fa-check-circle" style={{color:'white',fontSize:'24px'}}></i> 
+      <l>&nbsp;&nbsp;Sign In to start earning ! </l></div>
 
     </div>
   );
 };
 
 export default App;
+
+
+
+
+/* CSS */

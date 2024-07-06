@@ -27,10 +27,18 @@ function Login() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [errormsg,seterrormsg]=useState('')
+  const [visible, setVisible] = useState(false);
     // onAuthStateChanged(auth, (currentUser) => {
     //   setUser(currentUser);
     // });
-  
+   
+
+    const handleClick = () => {
+      setVisible(true);
+      setTimeout(() => {
+          setVisible(false);
+      }, 7000)}
+
     const register = async () => {
       try {
         createUserWithEmailAndPassword(
@@ -64,7 +72,14 @@ function Login() {
         if(user.user.emailVerified)
           {
             localStorage.setItem('email',user.user.email)
-            navigate('/');
+
+            setShow(false)
+            handleClick()
+
+            setTimeout(()=>{
+              navigate('/');
+            },2000)
+          
           }
   
           else{
@@ -81,6 +96,8 @@ function Login() {
     const logout = async () => {
       await signOut(auth);
     };
+
+
 
   return (
     <div>
@@ -136,6 +153,13 @@ function Login() {
         </Modal.Footer>
         </center>
       </Modal>
+      
+
+      <div  className={`toasty ${visible ? 'visible' : ''}`}  style={{backgroundColor:'green',position:'absolute',top:'2em',right:'1em', width:'25em',height:'4em',borderRadius:'5px',color:'white'}}>&nbsp;&nbsp;<i class="fa fa-check-circle" style={{color:'white',fontSize:'24px'}}></i> 
+      <l>&nbsp;&nbsp;User Logged In </l></div>
+
+
+
     </div>
   )
 }
