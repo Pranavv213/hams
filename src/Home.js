@@ -95,8 +95,9 @@ const App = () => {
         sendEmailVerification(auth.currentUser).then((data2)=>{
           // alert('Email Verification Link Sent')
           setShow(false)
+          handleClick()
           // setTimeout(()=>{
-          //   handleClick()
+          
           // },500)
           
           // setTimeout(()=>{
