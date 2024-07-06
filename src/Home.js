@@ -105,10 +105,22 @@ const App = () => {
         })
         console.log(data)
       }).catch((error)=>{
-        if(registerPassword.length<6)
+
+        if(registerEmail=='' || registerPassword=='')
+          {
+            seterrormsg('Fields cannot be empty')
+          }
+        else if(registerPassword.length<6)
             {
                 seterrormsg('Password should be atleast 6 characters')
             }
+        else if(!registerEmail.includes('@'))
+          {
+            seterrormsg('Enter Valid Email')
+          }
+          else{
+            seterrormsg('User already exists. Please try with different Email')
+          }
         console.log(error)
       })
      
