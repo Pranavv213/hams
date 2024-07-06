@@ -95,13 +95,14 @@ const App = () => {
         sendEmailVerification(auth.currentUser).then((data2)=>{
           // alert('Email Verification Link Sent')
           setShow(false)
-          setTimeout(()=>{
-            handleClick()
-          },500)
+          // setTimeout(()=>{
+          //   handleClick()
+          // },500)
           
-          setTimeout(()=>{
-            navigate('/login')
-          },7000)
+          // setTimeout(()=>{
+          //   navigate('/login')
+          // },7000)
+          seterrormsg('Verification link sent on Mail. Please verify and then login ')
         })
         console.log(data)
       }).catch((error)=>{
