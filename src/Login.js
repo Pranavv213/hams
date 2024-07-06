@@ -122,7 +122,7 @@ function Login() {
      <br></br><br></br>
      <input style={{width:'100%',height:'3em'}}
           placeholder="Enter Password"
-          type="email"
+          type="password"
           
           onChange={(event) => {
             setLoginPassword(event.target.value);

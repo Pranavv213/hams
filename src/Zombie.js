@@ -234,7 +234,7 @@ const App = () => {
         style={{ width: `${size}%`, height: 'auto',outline:'none',userSelect:'none' }}
       />
 </div>}
-<div  className={`button-85 ${visible ? 'visible' : ''}`}  style={{position:'absolute',top:'10em',right:'5em', width:'25em',height:'4em',borderRadius:'5px',color:'white'}}>&nbsp;&nbsp;<i class="fa fa-check-circle" style={{color:'white',fontSize:'24px'}}></i> 
+<div  className={`button-85 ${visible ? 'visible' : ''}`}  style={{position:'absolute',top:'10em',right:'3em', width:'25em',height:'4em',borderRadius:'5px',color:'white'}}>&nbsp;&nbsp;<i class="fa fa-check-circle" style={{color:'white',fontSize:'24px'}}></i> 
       <l>&nbsp;&nbsp;Sign In to start earning ! </l></div>
 
     </div>

@@ -181,7 +181,7 @@ const App = () => {
      <br></br><br></br>
      <input style={{width:'100%',height:'3em'}}
           placeholder="Set Password"
-          type="email"
+          type="password"
           
           onChange={(event) => {
             setRegisterPassword(event.target.value);
