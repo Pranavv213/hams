@@ -51,7 +51,7 @@ import "./App.css";
 import { auth } from "./firebase-config";
 
 
-import toast, { Toaster } from 'react-hot-toast';
+
 
 
 
@@ -65,7 +65,7 @@ const App = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [errormsg,seterrormsg]=useState('')
-  const notify = () => toast('Here is your toast.');
+ 
   const [visible, setVisible] = useState(false);
 
   const [user, setUser] = useState({});
