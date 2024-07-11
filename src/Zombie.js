@@ -156,26 +156,26 @@ const App = () => {
     return () => clearInterval(toggleImageInterval);
   }, [firstImage, secondImage]);
 
-  useEffect(() => {
-    // Enlarge the image every 100 milliseconds
-    const enlargeInterval = setInterval(() => {
-        setSize((prevSize) => {
-            if (prevSize < 80) {
-              return prevSize + 1;
-            } else {
-              setShowBackground(true);
+  // useEffect(() => {
+  //   // Enlarge the image every 100 milliseconds
+  //   const enlargeInterval = setInterval(() => {
+  //       setSize((prevSize) => {
+  //           if (prevSize < 80) {
+  //             return prevSize + 1;
+  //           } else {
+  //             setShowBackground(true);
               
              
-              setTimeout(() => setShowBackground(false), 2000); // revert background after 2 seconds
-              return 45; // reset size to initial size
-            }
-          });
+  //             setTimeout(() => setShowBackground(false), 2000); // revert background after 2 seconds
+  //             return 45; // reset size to initial size
+  //           }
+  //         });
          
         
-    }, 100);
+  //   }, 100);
 
-    return () => clearInterval(enlargeInterval);
-  }, []);
+  //   return () => clearInterval(enlargeInterval);
+  // }, []);
 
   return (
     <div className='image-container' >

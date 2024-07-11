@@ -122,19 +122,664 @@
   opacity: 1;
 }
 
+/* Reset styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: rgb(238, 172, 93);
+  background: radial-gradient(circle, rgba(238, 172, 93, 1) 0%, rgba(252, 115, 13, 1) 100%);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* Global styles */
+#body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: chocolate;
+  padding: 25px 50px 20px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1100; /* Ensure it appears above other elements */
+  display: none;
+  text-align: center;
+}
+
+.popup input[type="text"],
+.popup input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup button {
+  width: 100%;
+  padding: 10px;
+  background-color: chocolate;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: darkorange;
+}
+
+.popup a {
+  display: block;
+  margin-top: 10px;
+  color: blue;
+  text-decoration: none;
+}
+
+/* Navbar and BottomNavbar styles */
+#navbar, #navbar-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.2); /* Reduced opacity */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Glass effect */
+  position: fixed;
+  z-index: 1000;
+}
+
+#navbar {
+  width: 99%;
+  top: 0;
+}
+
+#navbar-bottom {
+  width: 100%; /* Full width */
+  bottom: 0;
+  display: flex;
+  justify-content: space-around; /* Center and evenly distribute items */
+  align-items: center;
+  padding: 10px 0; /* Adjusted padding */
+  overflow-x: hidden; /* Hide overflow on small screens */
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  position: relative; /* Added position relative */
+}
+
+.nav-button img {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+  border: none;
+  background-color: inherit;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+#b-icon img {
+  width: 50px; /* Larger size for b.png */
+  height: 50px;
+}
+.sign-in-button {
+  padding: 10px;
+  background-color: chocolate;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  left:20px;
+  position: absolute;
+}
+
+.sign-in-button:hover {
+  background-color: darkorange;
+}
+
+
+/* Game Container styles */
+#game-container {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5); 
+  background: linear-gradient(rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 25%); 
+  padding: 20px;
+  width: 97vw;
+  margin-top: -25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#coin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjusted margin */
+}
+
+#coin-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+#tap-count {
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 5px; /* Adjusted margin */
+}
+
+#image-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgb(238, 172, 93);
+  background: radial-gradient(circle, rgba(238, 172, 93, 1) 0%, rgba(252, 115, 13, 1) 100%);
+  border: 20px solid transparent;
+  box-shadow:
+      0 4px 15px rgba(0, 0, 0, 0.5),
+      inset 0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 15px rgba(255, 255, 255, 0.1),
+      0 0 20px rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.05s, box-shadow 0.05s;
+  user-select: none;
+  position: relative;
+  margin-top: 20px;
+}
+
+#image-container:after {
+  content: '';
+  position: absolute;
+  bottom: -15px; /* Adjusted position */
+  left: 0;
+  right: 0;
+  height: 10%; /* Adjusted height */
+  background-color: rgba(0, 0, 0, 0.3); /* Adjusted color */
+  border-radius: 50%;
+  transform: translateY(50%);
+  z-index: -1;
+  transition: opacity 0.2s ease; /* Added transition */
+}
+
+#image-container img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#image-container.tapped {
+  transform: scale(0.95);
+}
+
+.tap-indicator {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  animation: moveUp 1s forwards;
+}
+
+@keyframes moveUp {
+  0% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-300px);
+  }
+}
+
+
+
+
+ 
+
+
 }
 
 @media  (min-width: 558px)
 {
   .Tap{
-    visibility: hidden;
+    visibility: visible;
   }
-  .mobile-warning{
-    display: block;
+  body{
+
+    height: 100vh;
+      background-image: url('./zombieimg/forest\ -\ Copy.jpg');
+   
+     background-repeat: no-repeat;
+     overflow-x: hidden;
+    
+   }
+   .App{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding:'2em'
+   }
+   .mobile-warning{
+  display: none;
   }
+
+ .toasty{
+  display:flex;
+  
+  justify-content: left;
+  
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 1s ease-in-out;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+ }
+  
+ .toasty.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display:flex;
+  
+  justify-content: left;
+  
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 1s ease-in-out;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.button-85.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Reset styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: rgb(238, 172, 93);
+  background: radial-gradient(circle, rgba(238, 172, 93, 1) 0%, rgba(252, 115, 13, 1) 100%);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* Global styles */
+#body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: chocolate;
+  padding: 25px 50px 20px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1100; /* Ensure it appears above other elements */
+  display: none;
+  text-align: center;
+}
+
+.popup input[type="text"],
+.popup input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup button {
+  width: 100%;
+  padding: 10px;
+  background-color: chocolate;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: darkorange;
+}
+
+.popup a {
+  display: block;
+  margin-top: 10px;
+  color: blue;
+  text-decoration: none;
+}
+
+/* Navbar and BottomNavbar styles */
+#navbar, #navbar-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.2); /* Reduced opacity */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Glass effect */
+  position: fixed;
+  z-index: 1000;
+}
+
+#navbar {
+  width: 99%;
+  top: 0;
+}
+
+#navbar-bottom {
+  width: 100%; /* Full width */
+  bottom: 0;
+  display: flex;
+  justify-content: space-around; /* Center and evenly distribute items */
+  align-items: center;
+  padding: 10px 0; /* Adjusted padding */
+  overflow-x: hidden; /* Hide overflow on small screens */
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  position: relative; /* Added position relative */
+}
+
+.nav-button img {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+  border: none;
+  background-color: inherit;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+#b-icon img {
+  width: 50px; /* Larger size for b.png */
+  height: 50px;
+}
+.sign-in-button {
+  padding: 10px;
+  background-color: chocolate;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  left:20px;
+  position: absolute;
+}
+
+.sign-in-button:hover {
+  background-color: darkorange;
+}
+
+
+/* Game Container styles */
+#game-container {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5); 
+  background: linear-gradient(rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 25%); 
+  padding: 20px;
+  width: 97vw;
+  margin-top: -25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#coin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjusted margin */
+}
+
+#coin-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+#tap-count {
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 5px; /* Adjusted margin */
+}
+
+#image-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgb(238, 172, 93);
+  background: radial-gradient(circle, rgba(238, 172, 93, 1) 0%, rgba(252, 115, 13, 1) 100%);
+  border: 20px solid transparent;
+  box-shadow:
+      0 4px 15px rgba(0, 0, 0, 0.5),
+      inset 0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 15px rgba(255, 255, 255, 0.1),
+      0 0 20px rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.05s, box-shadow 0.05s;
+  user-select: none;
+  position: relative;
+  margin-top: 20px;
+}
+
+#image-container:after {
+  content: '';
+  position: absolute;
+  bottom: -15px; /* Adjusted position */
+  left: 0;
+  right: 0;
+  height: 10%; /* Adjusted height */
+  background-color: rgba(0, 0, 0, 0.3); /* Adjusted color */
+  border-radius: 50%;
+  transform: translateY(50%);
+  z-index: -1;
+  transition: opacity 0.2s ease; /* Added transition */
+}
+
+#image-container img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#image-container.tapped {
+  transform: scale(0.95);
+}
+
+.tap-indicator {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  animation: moveUp 1s forwards;
+}
+
+@keyframes moveUp {
+  0% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-300px);
+  }
+}
 }
 .zombielife{
   display: flex;
   align-items: center;
 }
 
+
+#b-icon img {
+  width: 40px; /* Adjusted size for b.png */
+  height: 40px;
+}
+#coin-icon {
+  width: 30px; /* Adjusted size for coin icon */
+  height: 30px;
+  margin-right: 3px;
+}
+#tap-count {
+  font-size: 20px; /* Adjusted font size for tap count */
+}
+#game-container {
+  /* top: 12%; */
+ 
+}
+.popup {
+  width: 90%;
+}

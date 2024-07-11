@@ -23,6 +23,7 @@ import google from './images/google.png'
 import forest from './zombieimg/forest - Copy.jpg'
 import Login from './Login'
 import Modal from 'react-bootstrap/Modal';
+import GameContainer from './GameContainer';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -167,7 +168,7 @@ const App = () => {
      
 
  
- <Navbar bg="dark" data-bs-theme="dark">
+ <Navbar bg="dark" data-bs-theme="dark" style={{position:'absolute',top:'0px',width:'100%',left:'0px'}}>
         <Container>
           <Navbar.Brand href="#home">
 
@@ -267,9 +268,9 @@ const App = () => {
    
    </div>
   
-    <Zombie/>
+    {/* <Zombie/> */}
    
-
+<GameContainer/>
    
     </center>
     
@@ -278,24 +279,7 @@ const App = () => {
   
 
     
-    <Navbar bg="dark" data-bs-theme="dark" fixed="bottom" >
-        <Container>
-         
-          <Nav className="me-auto">
-            <Nav.Link href="#home"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              
-              
-               Mine</Nav.Link>
-            <Nav.Link href="#home">Friends</Nav.Link>
-            <Nav.Link href="#home">Airdrop</Nav.Link>
-            
-            
-            
-          </Nav>
-        </Container>
-      </Navbar>
+   
       
    
     {/* <Footer/> */}
