@@ -7,13 +7,11 @@ import mineImage from './images/weapons.png';
 import friendsImage from './images/friends.png';
 import earnImage from './images/earn.png';
 import airDropImage from './images/rBitCoin.png';
-import Footer from './Footer'
-import Tap from './Tap';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { LoginButton } from '@telegram-auth/react';
 
-import Zombie from './Zombie';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -227,7 +225,7 @@ const App = () => {
         </center>
       </Modal>
 
-      {localStorage.getItem('email')? <div className='button-28'>{localStorage.getItem('email')}</div>:<div>  <button class="button-28" onClick={handleShow}>Sign In</button></div>}
+      {localStorage.getItem('email')? <div className='button-85'>{localStorage.getItem('email')}</div>:<div>  <button class="button-85" onClick={handleShow}>Sign In</button></div>}
           
     
 

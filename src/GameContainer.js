@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import BottomNavbar from './BNavBar';
-import Navbar from './Navbar';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { db } from "./firebase-config";
